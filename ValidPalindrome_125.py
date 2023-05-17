@@ -1,3 +1,18 @@
+'''
+Algorithm (two pointers)
+1. Loop through the str with 2 pointers
+2. The first pointer starts at 0 the other at n-1
+3. If both are alphanumerical check if they are equal. Return false if not
+4. If one is not alphanumerical increment/decrement it by 1 until it is
+5. After successful comparison increment/decrement by 1 each pointer.
+6. Finish loop after both indexes are equal
+7. Return true
+
+Time: O(n)
+Space: O(1) or O(n) depending on implementation
+
+'''
+
 #O(1) space by neetcode
 class Solution:
     def isPalindrome(self, s: str) -> bool:
