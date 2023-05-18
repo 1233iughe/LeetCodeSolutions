@@ -1,9 +1,21 @@
 '''
 Algorithm (complement searching/ one pointer one holder)
 1. Loop while substracting the ith element to target
-2. check if difference is on numbers
-2. 
+2. Check if difference is on numbers
+3. If it is hold the value and index
+4. Check until hold equals ith value
 
+Time: O(n)
+Space:O(1)
+
+Algorithm (2 pointers):
+1. Since the array is ordered it can be used as any sum of 2 numbers can be compared against target
+2. If is > reduce the right pointer
+3. If is < increase left pointer
+4. Repeat until a[left]+a[right] == target
+
+Time: O(n)
+Space:O(1)
 '''
 #Two pointers, based in Neetcode solution 
 class Solution:
@@ -19,7 +31,7 @@ class Solution:
             else:
                 return [l+1, r+1]
         return False
-#One pointer
+#One pointer and holder
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
 
