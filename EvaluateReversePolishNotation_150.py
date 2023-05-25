@@ -1,3 +1,9 @@
+''''
+Time: O(n)
+Space: O(n)
+'''
+#Stack solution (mine)
+
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
@@ -22,4 +28,22 @@ class Solution:
                 stack.append(result)
                 #print(op1, token, op2, result)
             i += 1
+        return stack[0]
+#Stack solution by neetcode
+class Solution:
+    def evalRPN(self, tokens: List[str]) -> int:
+        stack = []
+        for c in tokens:
+            if c == "+":
+                stack.append(stack.pop() + stack.pop())
+            elif c == "-":
+                a, b = stack.pop(), stack.pop()
+                stack.append(b - a)
+            elif c == "*":
+                stack.append(stack.pop() * stack.pop())
+            elif c == "/":
+                a, b = stack.pop(), stack.pop()
+                stack.append(int(b / a))
+            else:
+                stack.append(int(c))
         return stack[0]
